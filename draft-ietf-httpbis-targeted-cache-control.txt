@@ -5,10 +5,10 @@
 HTTP                                                            S. Ludin
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                           M. Nottingham
-Expires: 19 May 2022                                              Fastly
+Expires: 20 May 2022                                              Fastly
                                                                    Y. Wu
                                                               Cloudflare
-                                                        15 November 2021
+                                                        16 November 2021
 
 
                       Targeted HTTP Cache Control
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 May 2022.
+   This Internet-Draft will expire on 20 May 2022.
 
 Copyright Notice
 
