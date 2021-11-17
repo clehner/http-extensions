@@ -1052,7 +1052,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Oku &amp; Pardue</td>
-<td class="center">Expires 20 May 2022</td>
+<td class="center">Expires 21 May 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="internet-draft">draft-ietf-httpbis-priority</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-11-16" class="published">16 November 2021</time>
+<time datetime="2021-11-17" class="published">17 November 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-05-20">20 May 2022</time></dd>
+<dd class="expires"><time datetime="2022-05-21">21 May 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ code and issues list for this draft can be found at
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 May 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 May 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1384,9 +1384,10 @@ substitute for RFC 7540 stream priority.<a href="#section-1-8" class="pilcrow">�
         <h3 id="name-notational-conventions">
 <a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-notational-conventions" class="section-name selfRef">Notational Conventions</a>
         </h3>
-<p id="section-1.1-1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span>.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+<p id="section-1.1-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
+"<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
+described in BCP 14 <span>[<a href="#RFC2119" class="xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="xref">RFC8174</a>]</span> when, and only when, they
+appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
 <p id="section-1.1-2">The terms Dictionary, sf-boolean, sf-dictionary, and sf-integer are imported from
 <span>[<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
 <p id="section-1.1-3">Example HTTP requests and responses use the HTTP/2-style formatting from
@@ -1469,18 +1470,18 @@ RFC 7540 stream priority (see <span><a href="https://rfc-editor.org/rfc/rfc7540#
 <p id="section-2.1-2">The SETTINGS_NO_RFC7540_PRIORITIES HTTP/2 setting is defined by this document in
 order to allow endpoints to omit or ignore HTTP/2 priority signals (see
 <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), as described below. The value of
-SETTINGS_NO_RFC7540_PRIORITIES MUST be 0 or 1. Any value other than 0 or 1 MUST
+SETTINGS_NO_RFC7540_PRIORITIES <span class="bcp14">MUST</span> be 0 or 1. Any value other than 0 or 1 <span class="bcp14">MUST</span>
 be treated as a connection error (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.4.1" class="relref">Section 5.4.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) of type
 PROTOCOL_ERROR. The initial value is 0.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
-<p id="section-2.1-3">If endpoints use SETTINGS_NO_RFC7540_PRIORITIES they MUST send it in the first
-SETTINGS frame. Senders MUST NOT change the SETTINGS_NO_RFC7540_PRIORITIES value
-after the first SETTINGS frame. Receivers that detect a change MAY treat it as a
+<p id="section-2.1-3">If endpoints use SETTINGS_NO_RFC7540_PRIORITIES they <span class="bcp14">MUST</span> send it in the first
+SETTINGS frame. Senders <span class="bcp14">MUST NOT</span> change the SETTINGS_NO_RFC7540_PRIORITIES value
+after the first SETTINGS frame. Receivers that detect a change <span class="bcp14">MAY</span> treat it as a
 connection error of type PROTOCOL_ERROR.<a href="#section-2.1-3" class="pilcrow">¶</a></p>
 <p id="section-2.1-4">Clients can send SETTINGS_NO_RFC7540_PRIORITIES with a value of 1 to indicate
 that they are not using HTTP/2 priority signals. The SETTINGS frame precedes any
 HTTP/2 priority signal sent from clients, so servers can determine whether they
 need to allocate any resources to signal handling before signals arrive. A
-server that receives SETTINGS_NO_RFC7540_PRIORITIES with a value of 1 MUST
+server that receives SETTINGS_NO_RFC7540_PRIORITIES with a value of 1 <span class="bcp14">MUST</span>
 ignore HTTP/2 priority signals.<a href="#section-2.1-4" class="pilcrow">¶</a></p>
 <p id="section-2.1-5">Servers can send SETTINGS_NO_RFC7540_PRIORITIES with a value of 1 to indicate
 that they will ignore HTTP/2 priority signals sent by clients.<a href="#section-2.1-5" class="pilcrow">¶</a></p>
@@ -1492,13 +1493,13 @@ alternative priority signals (for example, <a href="#header-field" class="xref">
           <h4 id="name-advice-when-using-extensibl">
 <a href="#section-2.1.1" class="section-number selfRef">2.1.1. </a><a href="#name-advice-when-using-extensibl" class="section-name selfRef">Advice when Using Extensible Priorities as the Alternative</a>
           </h4>
-<p id="section-2.1.1-1">Until the client receives the SETTINGS frame from the server, the client SHOULD
+<p id="section-2.1.1-1">Until the client receives the SETTINGS frame from the server, the client <span class="bcp14">SHOULD</span>
 send both the HTTP/2 priority signals and the signals of this prioritization
 scheme (see <a href="#header-field" class="xref">Section 5</a> and <a href="#h2-update-frame" class="xref">Section 7.1</a>). When the client receives
 the first SETTINGS frame that contains the SETTINGS_NO_RFC7540_PRIORITIES
-parameter with value of 1, it SHOULD stop sending the HTTP/2 priority signals.
-If the value was 0 or if the settings parameter was absent, it SHOULD stop
-sending PRIORITY_UPDATE frames (<a href="#h2-update-frame" class="xref">Section 7.1</a>), but MAY continue sending
+parameter with value of 1, it <span class="bcp14">SHOULD</span> stop sending the HTTP/2 priority signals.
+If the value was 0 or if the settings parameter was absent, it <span class="bcp14">SHOULD</span> stop
+sending PRIORITY_UPDATE frames (<a href="#h2-update-frame" class="xref">Section 7.1</a>), but <span class="bcp14">MAY</span> continue sending
 the Priority header field (<a href="#header-field" class="xref">Section 5</a>), as it is an end-to-end signal that
 might be useful to nodes behind the server that the client is directly connected
 to.<a href="#section-2.1.1-1" class="pilcrow">¶</a></p>
@@ -1543,12 +1544,12 @@ priority parameters is encoded as a Structured Fields Dictionary (see
 <span><a href="https://rfc-editor.org/rfc/rfc8941#section-3.2" class="relref">Section 3.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>).<a href="#section-4-4" class="pilcrow">¶</a></p>
 <p id="section-4-5">This document defines the urgency(<code>u</code>) and incremental(<code>i</code>) parameters. When
 receiving an HTTP request that does not carry these priority parameters, a
-server SHOULD act as if their default values were specified. Note that handling
+server <span class="bcp14">SHOULD</span> act as if their default values were specified. Note that handling
 of omitted parameters is different when processing an HTTP response; see
 <a href="#merging" class="xref">Section 8</a>.<a href="#section-4-5" class="pilcrow">¶</a></p>
 <p id="section-4-6">Receivers parse the Dictionary as defined in <span><a href="https://rfc-editor.org/rfc/rfc8941#section-4.2" class="relref">Section 4.2</a> of [<a href="#STRUCTURED-FIELDS" class="xref">STRUCTURED-FIELDS</a>]</span>. Where the Dictionary is successfully parsed, this document
 places the additional requirement that unknown priority parameters, parameters
-with out-of-range values, or values of unexpected types MUST be ignored.<a href="#section-4-6" class="pilcrow">¶</a></p>
+with out-of-range values, or values of unexpected types <span class="bcp14">MUST</span> be ignored.<a href="#section-4-6" class="pilcrow">¶</a></p>
 <div id="urgency">
 <section id="section-4.1">
         <h3 id="name-urgency">
@@ -1573,11 +1574,11 @@ priority = u=0
 </pre><a href="#section-4.1-5" class="pilcrow">¶</a>
 </div>
 <p id="section-4.1-6">A client that fetches a document that likely consists of multiple HTTP resources
-(e.g., HTML) SHOULD assign the default urgency level to the main resource.  This
+(e.g., HTML) <span class="bcp14">SHOULD</span> assign the default urgency level to the main resource.  This
 convention allows servers to refine the urgency using
 knowledge specific to the web-site (see <a href="#merging" class="xref">Section 8</a>).<a href="#section-4.1-6" class="pilcrow">¶</a></p>
 <p id="section-4.1-7">The lowest urgency level (7) is reserved for background tasks such as delivery
-of software updates. This urgency level SHOULD NOT be used for fetching
+of software updates. This urgency level <span class="bcp14">SHOULD NOT</span> be used for fetching
 responses that have impact on user interaction.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1750,10 +1751,10 @@ they can be used to reprioritize a response or a push stream; or signal the
 initial priority of a response instead of the Priority header field.<a href="#section-7-2" class="pilcrow">¶</a></p>
 <p id="section-7-3">A PRIORITY_UPDATE frame communicates a complete set of all parameters in the
 Priority Field Value field. Omitting a parameter is a signal to use the
-parameter's default value. Failure to parse the Priority Field Value MAY be
+parameter's default value. Failure to parse the Priority Field Value <span class="bcp14">MAY</span> be
 treated as a connection error. In HTTP/2 the error is of type PROTOCOL_ERROR; in
 HTTP/3 the error is of type H3_GENERAL_PROTOCOL_ERROR.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">A client MAY send a PRIORITY_UPDATE frame before the stream that it references
+<p id="section-7-4">A client <span class="bcp14">MAY</span> send a PRIORITY_UPDATE frame before the stream that it references
 is open (except for HTTP/2 push streams; see <a href="#h2-update-frame" class="xref">Section 7.1</a>). Furthermore,
 HTTP/3 offers no guaranteed ordering across streams, which could cause the frame
 to be received earlier than intended. Either case leads to a race condition
@@ -1761,7 +1762,7 @@ where a server receives a PRIORITY_UPDATE frame that references a request stream
 that is yet to be opened. To solve this condition, for the purposes of
 scheduling, the most recently received PRIORITY_UPDATE frame can be considered
 as the most up-to-date information that overrides any other signal. Servers
-SHOULD buffer the most recently received PRIORITY_UPDATE frame and apply it once
+<span class="bcp14">SHOULD</span> buffer the most recently received PRIORITY_UPDATE frame and apply it once
 the referenced stream is opened. Holding PRIORITY_UPDATE frames for each stream
 requires server resources, which can can be bound by local implementation
 policy. Although there is no limit to the number of PRIORITY_UPDATES that can be
@@ -1776,8 +1777,8 @@ initial priority of a response, or to reprioritize a response or push stream. It
 carries the stream ID of the response and the priority in ASCII text, using the
 same representation as the Priority header field value.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
 <p id="section-7.1-2">The Stream Identifier field (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.1.1" class="relref">Section 5.1.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) in the
-PRIORITY_UPDATE frame header MUST be zero (0x0). Receiving a PRIORITY_UPDATE
-frame with a field of any other value MUST be treated as a connection error of
+PRIORITY_UPDATE frame header <span class="bcp14">MUST</span> be zero (0x0). Receiving a PRIORITY_UPDATE
+frame with a field of any other value <span class="bcp14">MUST</span> be treated as a connection error of
 type PROTOCOL_ERROR.<a href="#section-7.1-2" class="pilcrow">¶</a></p>
 <span id="name-http-2-priority_update-frame"></span><div id="fig-h2-reprioritization-frame">
 <figure id="figure-1">
@@ -1810,7 +1811,7 @@ frame payload contains the following additional fields:<a href="#section-7.1-4" 
 Reserved:  </dt>
           <dd style="margin-left: 1.5em" id="section-7.1-5.2">
             <p id="section-7.1-5.2.1">A reserved 1-bit field. The semantics of this bit are undefined, and the bit
-MUST remain unset (0x0) when sending and MUST be ignored when receiving.<a href="#section-7.1-5.2.1" class="pilcrow">¶</a></p>
+<span class="bcp14">MUST</span> remain unset (0x0) when sending and <span class="bcp14">MUST</span> be ignored when receiving.<a href="#section-7.1-5.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 <dt id="section-7.1-5.3">
@@ -1828,26 +1829,26 @@ is the same representation as the Priority header field value.<a href="#section-
 </dd>
         <dd class="break"></dd>
 </dl>
-<p id="section-7.1-6">When the PRIORITY_UPDATE frame applies to a request stream, clients SHOULD
+<p id="section-7.1-6">When the PRIORITY_UPDATE frame applies to a request stream, clients <span class="bcp14">SHOULD</span>
 provide a Prioritized Stream ID that refers to a stream in the "open",
 "half-closed (local)", or "idle" state. Servers can discard frames where the
 Prioritized Stream ID refers to a stream in the "half-closed (local)" or
 "closed" state. The number of streams which have been prioritized but remain in
 the "idle" state plus the number of active streams (those in the "open" or
-either "half-closed" state; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.1.2" class="relref">Section 5.1.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) MUST NOT exceed
+either "half-closed" state; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.1.2" class="relref">Section 5.1.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) <span class="bcp14">MUST NOT</span> exceed
 the value of the SETTINGS_MAX_CONCURRENT_STREAMS parameter. Servers that receive
-such a PRIORITY_UPDATE MUST respond with a connection error of type
+such a PRIORITY_UPDATE <span class="bcp14">MUST</span> respond with a connection error of type
 PROTOCOL_ERROR.<a href="#section-7.1-6" class="pilcrow">¶</a></p>
-<p id="section-7.1-7">When the PRIORITY_UPDATE frame applies to a push stream, clients SHOULD provide
+<p id="section-7.1-7">When the PRIORITY_UPDATE frame applies to a push stream, clients <span class="bcp14">SHOULD</span> provide
 a Prioritized Stream ID that refers to a stream in the "reserved (remote)" or
 "half-closed (local)" state. Servers can discard frames where the Prioritized
-Stream ID refers to a stream in the "closed" state. Clients MUST NOT provide a
+Stream ID refers to a stream in the "closed" state. Clients <span class="bcp14">MUST NOT</span> provide a
 Prioritized Stream ID that refers to a push stream in the "idle" state. Servers
-that receive a PRIORITY_UPDATE for a push stream in the "idle" state MUST
+that receive a PRIORITY_UPDATE for a push stream in the "idle" state <span class="bcp14">MUST</span>
 respond with a connection error of type PROTOCOL_ERROR.<a href="#section-7.1-7" class="pilcrow">¶</a></p>
 <p id="section-7.1-8">If a PRIORITY_UPDATE frame is received with a Prioritized Stream ID of 0x0, the
-recipient MUST respond with a connection error of type PROTOCOL_ERROR.<a href="#section-7.1-8" class="pilcrow">¶</a></p>
-<p id="section-7.1-9">If a client receives a PRIORITY_UPDATE frame, it MUST respond with a connection
+recipient <span class="bcp14">MUST</span> respond with a connection error of type PROTOCOL_ERROR.<a href="#section-7.1-8" class="pilcrow">¶</a></p>
+<p id="section-7.1-9">If a client receives a PRIORITY_UPDATE frame, it <span class="bcp14">MUST</span> respond with a connection
 error of type PROTOCOL_ERROR.<a href="#section-7.1-9" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1863,9 +1864,9 @@ the updated priority in ASCII text, using the same representation as that of the
 Priority header field value. PRIORITY_UPDATE with a frame type of 0xF0700 is
 used for request streams, while PRIORITY_UPDATE with a frame type of 0xF0701 is
 used for push streams.<a href="#section-7.2-1" class="pilcrow">¶</a></p>
-<p id="section-7.2-2">The PRIORITY_UPDATE frame MUST be sent on the client control stream
+<p id="section-7.2-2">The PRIORITY_UPDATE frame <span class="bcp14">MUST</span> be sent on the client control stream
 (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-quic-http-34#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#HTTP3" class="xref">HTTP3</a>]</span>). Receiving a PRIORITY_UPDATE frame on a
-stream other than the client control stream MUST be treated as a connection
+stream other than the client control stream <span class="bcp14">MUST</span> be treated as a connection
 error of type H3_FRAME_UNEXPECTED.<a href="#section-7.2-2" class="pilcrow">¶</a></p>
 <span id="name-http-3-priority_update-frame"></span><div id="fig-h3-reprioritization-frame">
 <figure id="figure-2">
@@ -1899,22 +1900,22 @@ is the same representation as the Priority header field value.<a href="#section-
 </dd>
         <dd class="break"></dd>
 </dl>
-<p id="section-7.2-6">The request-stream variant of PRIORITY_UPDATE (type=0xF0700) MUST reference a
+<p id="section-7.2-6">The request-stream variant of PRIORITY_UPDATE (type=0xF0700) <span class="bcp14">MUST</span> reference a
 request stream. If a server receives a PRIORITY_UPDATE (type=0xF0700) for a
-Stream ID that is not a request stream, this MUST be treated as a connection
-error of type H3_ID_ERROR. The Stream ID MUST be within the client-initiated
+Stream ID that is not a request stream, this <span class="bcp14">MUST</span> be treated as a connection
+error of type H3_ID_ERROR. The Stream ID <span class="bcp14">MUST</span> be within the client-initiated
 bidirectional stream limit. If a server receives a PRIORITY_UPDATE
-(type=0xF0700) with a Stream ID that is beyond the stream limits, this SHOULD be
+(type=0xF0700) with a Stream ID that is beyond the stream limits, this <span class="bcp14">SHOULD</span> be
 treated as a connection error of type H3_ID_ERROR. Generating an error is not
 mandatory because HTTP/3 implementations might have practical barriers to
 determining the active stream concurrency limit that is applied by the QUIC
 layer.<a href="#section-7.2-6" class="pilcrow">¶</a></p>
-<p id="section-7.2-7">The push-stream variant PRIORITY_UPDATE (type=0xF0701) MUST reference a promised
+<p id="section-7.2-7">The push-stream variant PRIORITY_UPDATE (type=0xF0701) <span class="bcp14">MUST</span> reference a promised
 push stream. If a server receives a PRIORITY_UPDATE (type=0xF0701) with a Push ID
 that is greater than the maximum Push ID or which has not yet been promised, this
-MUST be treated as a connection error of type H3_ID_ERROR.<a href="#section-7.2-7" class="pilcrow">¶</a></p>
+<span class="bcp14">MUST</span> be treated as a connection error of type H3_ID_ERROR.<a href="#section-7.2-7" class="pilcrow">¶</a></p>
 <p id="section-7.2-8">PRIORITY_UPDATE frames of either type are only sent by clients. If a client
-receives a PRIORITY_UPDATE frame, this MUST be treated as a connection error of
+receives a PRIORITY_UPDATE frame, this <span class="bcp14">MUST</span> be treated as a connection error of
 type H3_FRAME_UNEXPECTED.<a href="#section-7.2-8" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1974,7 +1975,7 @@ not specify the incremental(<code>i</code>) parameter.<a href="#section-8-8" cla
       <h2 id="name-client-scheduling">
 <a href="#section-9" class="section-number selfRef">9. </a><a href="#name-client-scheduling" class="section-name selfRef">Client Scheduling</a>
       </h2>
-<p id="section-9-1">A client MAY use priority values to make local processing or scheduling choices
+<p id="section-9-1">A client <span class="bcp14">MAY</span> use priority values to make local processing or scheduling choices
 about the requests it initiates.<a href="#section-9-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1996,17 +1997,17 @@ there is no unilateral perfect scheduler and this document only provides some
 basic recommendations for implementations.<a href="#section-10-2" class="pilcrow">¶</a></p>
 <p id="section-10-3">Clients cannot depend on particular treatment based on priority signals. Servers
 can use other information to prioritize responses.<a href="#section-10-3" class="pilcrow">¶</a></p>
-<p id="section-10-4">It is RECOMMENDED that, when possible, servers respect the urgency parameter
+<p id="section-10-4">It is <span class="bcp14">RECOMMENDED</span> that, when possible, servers respect the urgency parameter
 (<a href="#urgency" class="xref">Section 4.1</a>), sending higher urgency responses before lower urgency responses.<a href="#section-10-4" class="pilcrow">¶</a></p>
 <p id="section-10-5">The incremental parameter indicates how a client processes response bytes as
-they arrive. It is RECOMMENDED that, when possible, servers respect the
+they arrive. It is <span class="bcp14">RECOMMENDED</span> that, when possible, servers respect the
 incremental parameter (<a href="#incremental" class="xref">Section 4.2</a>). Non-incremental resources can only be used
 when all of the response payload has been received. Therefore, non-incremental
-responses of the same urgency SHOULD be served in their entirety, one-by-one,
+responses of the same urgency <span class="bcp14">SHOULD</span> be served in their entirety, one-by-one,
 based on the stream ID, which corresponds to the order in which clients make
 requests. Doing so ensures that clients can use request ordering to influence
 response order.<a href="#section-10-5" class="pilcrow">¶</a></p>
-<p id="section-10-6">Incremental responses of the same urgency SHOULD be served by sharing bandwidth
+<p id="section-10-6">Incremental responses of the same urgency <span class="bcp14">SHOULD</span> be served by sharing bandwidth
 amongst them. Incremental resources are used as parts, or chunks, of the
 response payload are received. A client might benefit more from receiving a
 portion of all these resources rather than the entirety of a single resource.
@@ -2029,7 +2030,7 @@ followed by an incremental request for a small resource.<a href="#section-10-8.1
 followed by a non-incremental large resource.<a href="#section-10-8.2" class="pilcrow">¶</a>
 </li>
       </ol>
-<p id="section-10-9">It is RECOMMENDED that servers avoid such starvation where possible. The method
+<p id="section-10-9">It is <span class="bcp14">RECOMMENDED</span> that servers avoid such starvation where possible. The method
 to do so is an implementation decision. For example, a server might
 pre-emptively send responses of a particular incremental type based on other
 information such as content size.<a href="#section-10-9" class="pilcrow">¶</a></p>
@@ -2064,7 +2065,7 @@ possibility of this occurring, intermediaries can avoid strictly following
 prioritization and instead allocate small amounts of bandwidth for all the
 requests that they are forwarding, so that every request can make some progress
 over time.<a href="#section-10.1-1" class="pilcrow">¶</a></p>
-<p id="section-10.1-2">Similarly, servers SHOULD allocate some amount of bandwidths to streams acting
+<p id="section-10.1-2">Similarly, servers <span class="bcp14">SHOULD</span> allocate some amount of bandwidths to streams acting
 as tunnels.<a href="#section-10.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2093,7 +2094,7 @@ HTTP-layer prioritization, its effectiveness can be further enhanced if the
 transport layer factors priority into scheduling both new data and
 retransmission data. The remainder of this section discusses considerations when
 using QUIC.<a href="#section-12-1" class="pilcrow">¶</a></p>
-<p id="section-12-2"><span><a href="https://rfc-editor.org/rfc/rfc9000#section-13.3" class="relref">Section 13.3</a> of [<a href="#QUIC" class="xref">QUIC</a>]</span> states "Endpoints SHOULD prioritize
+<p id="section-12-2"><span><a href="https://rfc-editor.org/rfc/rfc9000#section-13.3" class="relref">Section 13.3</a> of [<a href="#QUIC" class="xref">QUIC</a>]</span> states "Endpoints <span class="bcp14">SHOULD</span> prioritize
 retransmission of data over sending new data, unless priorities specified by the
 application indicate otherwise". When an HTTP/3 application uses the priority
 scheme defined in this document and the QUIC transport implementation supports
@@ -2116,7 +2117,7 @@ might use the relative priority of streams when choosing probe data.<a href="#se
       <h2 id="name-fairness">
 <a href="#section-13" class="section-number selfRef">13. </a><a href="#name-fairness" class="section-name selfRef">Fairness</a>
       </h2>
-<p id="section-13-1">As a general guideline, a server SHOULD NOT use priority information for making
+<p id="section-13-1">As a general guideline, a server <span class="bcp14">SHOULD NOT</span> use priority information for making
 scheduling decisions across multiple connections, unless it knows that those
 connections originate from the same client. Due to this, priority information
 conveyed over a non-coalesced HTTP connection (e.g., HTTP/1.1) might go unused.<a href="#section-13-1" class="pilcrow">¶</a></p>
@@ -2167,8 +2168,8 @@ HTTP/2 and HTTP/3 while communication to back end servers is done using
 HTTP/1.1. Unlike with connection coalescing, the CDN will "de-mux" requests into
 discrete connections to the back end. HTTP/1.1 and older do not support response
 multiplexing in a single connection, so there is not a fairness problem.
-However, back end servers MAY still use client headers for request scheduling.
-Back end servers SHOULD only schedule based on client priority information where
+However, back end servers <span class="bcp14">MAY</span> still use client headers for request scheduling.
+Back end servers <span class="bcp14">SHOULD</span> only schedule based on client priority information where
 that information can be scoped to individual end clients. Authentication and
 other session information might provide this linkability.<a href="#section-13.2-1" class="pilcrow">¶</a></p>
 </section>
@@ -2367,6 +2368,10 @@ defined in <a href="#parameters" class="xref">Section 4</a>; see <a href="#regis
 <dt id="RFC8126">[RFC8126]</dt>
         <dd>
 <span class="refAuthor">Cotton, M.</span>, <span class="refAuthor">Leiba, B.</span>, and <span class="refAuthor">T. Narten</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">BCP 26</span>, <span class="seriesInfo">RFC 8126</span>, <span class="seriesInfo">DOI 10.17487/RFC8126</span>, <time datetime="2017-06" class="refDate">June 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8126">https://www.rfc-editor.org/rfc/rfc8126</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8174">[RFC8174]</dt>
+        <dd>
+<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="STRUCTURED-FIELDS">[STRUCTURED-FIELDS]</dt>
       <dd>
