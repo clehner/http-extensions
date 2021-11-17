@@ -1052,7 +1052,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Oku &amp; Pardue</td>
-<td class="center">Expires 20 May 2022</td>
+<td class="center">Expires 21 May 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1065,12 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dd class="internet-draft">draft-ietf-httpbis-priority</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-11-16" class="published">16 November 2021</time>
+<time datetime="2021-11-17" class="published">17 November 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-05-20">20 May 2022</time></dd>
+<dd class="expires"><time datetime="2022-05-21">21 May 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1126,7 +1126,7 @@ code and issues list for this draft can be found at
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 May 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 May 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1413,19 +1413,24 @@ in a revision of HTTP/2 <span>[<a href="#HTTP2" class="xref">HTTP2</a>]</span>. 
 compatibility, HTTP/2 priority signals are still mandatory to handle (see
 <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>).<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">Many RFC 7540 server implementations do not act on HTTP/2 priority
-signals. Prioritization can use information that servers have about resources or
+signals.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">Prioritization can use information that servers have about resources or
 the order in which requests are generated. For example, a server, with knowledge
 of an HTML document structure, might want to prioritize the delivery of images
-that are critical to user experience above other images.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">RFC 7540 does not define a method that can be used by a server to provide a
-priority signal for intermediaries.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">RFC 7540 priority is expressed relative to other requests on the same connection.
+that are critical to user experience above other images.  With RFC 7540 it is
+difficult for servers to interpret signals from clients for prioritization as
+the same conditions could result in very different signaling from different
+clients. This document describes signaling that is simpler and more constrained,
+requiring less interpretation and allowing less variation.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">RFC 7540 does not define a method that can be used by a server to provide a
+priority signal for intermediaries.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">RFC 7540 priority is expressed relative to other requests on the same connection.
 Many requests are generated without knowledge of how other requests might share a
 connection, which makes this difficult to use reliably, especially in protocols
-that do not have strong ordering guarantees, like HTTP/3 <span>[<a href="#HTTP3" class="xref">HTTP3</a>]</span>.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">Multiple experiments from independent research have shown that simpler schemes
+that do not have strong ordering guarantees, like HTTP/3 <span>[<a href="#HTTP3" class="xref">HTTP3</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Multiple experiments from independent research have shown that simpler schemes
 can reach at least equivalent performance characteristics compared to the more
-complex RFC 7540 setups seen in practice, at least for the web use case.<a href="#section-2-5" class="pilcrow">¶</a></p>
+complex RFC 7540 setups seen in practice, at least for the web use case.<a href="#section-2-6" class="pilcrow">¶</a></p>
 <div id="disabling">
 <section id="section-2.1">
         <h3 id="name-disabling-rfc-7540-prioriti">
