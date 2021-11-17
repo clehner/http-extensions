@@ -217,8 +217,10 @@ Table of Contents
    system where clients signal stream dependencies and weights to
    describe an unbalanced tree.  It suffered from limited deployment and
    interoperability and was deprecated in a revision of HTTP/2 [HTTP2].
-   However, in order to maintain wire compatibility, HTTP/2 priority
-   signals are still mandatory to handle (see Section 5.3.2 of [HTTP2]).
+   HTTP/2 retains these protocol elements in order to maintain wire
+   compatibility (see Section 5.3.2 of [HTTP2]), which means that they
+   might still be used in the absence of alternative signaling, such as
+   the scheme this document describes.
 
    Clients can build RFC 7540 trees with rich flexibility but experience
    has shown this is rarely exercised.  Instead they tend to choose a
@@ -318,14 +320,21 @@ Table of Contents
 
 2.1.1.  Advice when Using Extensible Priorities as the Alternative
 
-   Until the client receives the SETTINGS frame from the server, the
+   Before receiving a SETTINGS frame from a server, a client does not
+   know if the server is ignoring HTTP/2 priority signals.  Therefore,
+   until the client receives the SETTINGS frame from the server, the
    client SHOULD send both the HTTP/2 priority signals and the signals
-   of this prioritization scheme (see Section 5 and Section 7.1).  When
-   the client receives the first SETTINGS frame that contains the
+   of this prioritization scheme (see Section 5 and Section 7.1).
+
+   Once the client receives the first SETTINGS frame that contains the
    SETTINGS_NO_RFC7540_PRIORITIES parameter with value of 1, it SHOULD
-   stop sending the HTTP/2 priority signals.  If the value was 0 or if
-   the settings parameter was absent, it SHOULD stop sending
-   PRIORITY_UPDATE frames (Section 7.1), but MAY continue sending the
+   stop sending the HTTP/2 priority signals.  This avoids sending
+   redundant signals that are known to be ignored.
+
+   Similarly, if the client receives SETTINGS_NO_RFC7540_PRIORITIES with
+   value of 0 or if the settings parameter was absent, it SHOULD stop
+   sending PRIORITY_UPDATE frames (Section 7.1), since those frames are
+   likely to be ignored.  However, the client MAY continue sending the
    Priority header field (Section 5), as it is an end-to-end signal that
    might be useful to nodes behind the server that the client is
    directly connected to.
