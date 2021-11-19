@@ -1414,60 +1414,32 @@ in a revision of HTTP/2 <span>[<a href="#HTTP2" class="xref">HTTP2</a>]</span>. 
 order to maintain wire compatibility (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), which
 means that they might still be used in the absence of alternative signaling, such
 as the scheme this document describes.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">Clients can build RFC 7540 trees with rich flexibility but experience has shown
-this is rarely exercised. Instead they tend to choose a single model optimized
-for a single use case and experiment within the model constraints, or do nothing
-at all. Furthermore, many clients build their prioritization tree in a unique
-way, which makes it difficult for servers to understand their intent and act or
-intervene accordingly.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">Many RFC 7540 server implementations do not act on HTTP/2 priority signals. Some
-instead favor custom server-driven schemes based on heuristics or other hints,
-such as resource content type or request generation order. For example, a
-server, with knowledge of an HTML document structure, might want to prioritize
-the delivery of images that are critical to user experience above other images,
-but below the CSS files. Since client trees vary, it is impossible for the
-server to determine how such images should be prioritized against other
-responses.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">RFC 7540 allows intermediaries to coalesce multiple client trees into a single
-tree that is used for a single upstream HTTP/2 connection. However, most
-intermediaries do not support this. Additionally, RFC 7540 does not define a
-method that can be used by a server to express the priority of a response.
-Without such a method, intermediaries cannot coordinate client-driven and
-server-driven priorities.<a href="#section-2-4" class="pilcrow">¶</a></p>
-<p id="section-2-5">RFC 7540 describes denial-of-service considerations for implementations. On
-2019-08-13 Netflix issued an advisory notice about the discovery of several
-resource exhaustion vectors affecting multiple RFC 7540 implementations. One
-attack, <span>[<a href="#CVE-2019-9513" class="xref">CVE-2019-9513</a>]</span> aka "Resource Loop", is based on using priority signals
-to manipulate the server's stored prioritization state.<a href="#section-2-5" class="pilcrow">¶</a></p>
-<p id="section-2-6">HTTP/2 priority associated with an HTTP request is signalled as a value relative
-to those of other requests sharing the same HTTP/2 connection. Therefore, in
-order to prioritize requests, endpoints are compelled to have the knowledge of
-the underlying HTTP version and how the requests are coalesced. This has been
-a burden to HTTP endpoints that generate or forward requests in a
-version-agnostic manner.<a href="#section-2-6" class="pilcrow">¶</a></p>
-<p id="section-2-7">HTTP/2 priority signals are required to be delivered and processed in the order
-they are sent so that the receiver handling is deterministic. Porting HTTP/2
-priority signals to protocols that do not provide ordering guarantees presents
-challenges. For example, HTTP/3 <span>[<a href="#HTTP3" class="xref">HTTP3</a>]</span> lacks global ordering across streams
-that would carry priority signals. Early attempts to port HTTP/2 priority
-signals to HTTP/3 required adding additional information to the signals, leading
-to more complicated processing. Problems found with this approach could not be
-resolved and definition of a HTTP/3 priority signalling feature was removed
-before publication.<a href="#section-2-7" class="pilcrow">¶</a></p>
-<p id="section-2-8">Considering the deployment problems and the design restrictions of RFC 7540
-stream priority, as well as the difficulties in adapting it to HTTP/3,
-continuing to base prioritization on this mechanism risks increasing the
-complexity of systems. Multiple experiments from independent research have shown
-that simpler schemes can reach at least equivalent performance characteristics
-compared to the more complex RFC 7540 setups seen in practice, at least for the
-web use case.<a href="#section-2-8" class="pilcrow">¶</a></p>
+<p id="section-2-2">Many RFC 7540 server implementations do not act on HTTP/2 priority
+signals.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">Prioritization can use information that servers have about resources or
+the order in which requests are generated. For example, a server, with knowledge
+of an HTML document structure, might want to prioritize the delivery of images
+that are critical to user experience above other images.  With RFC 7540 it is
+difficult for servers to interpret signals from clients for prioritization as
+the same conditions could result in very different signaling from different
+clients. This document describes signaling that is simpler and more constrained,
+requiring less interpretation and allowing less variation.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">RFC 7540 does not define a method that can be used by a server to provide a
+priority signal for intermediaries.<a href="#section-2-4" class="pilcrow">¶</a></p>
+<p id="section-2-5">RFC 7540 priority is expressed relative to other requests on the same connection.
+Many requests are generated without knowledge of how other requests might share a
+connection, which makes this difficult to use reliably, especially in protocols
+that do not have strong ordering guarantees, like HTTP/3 <span>[<a href="#HTTP3" class="xref">HTTP3</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+<p id="section-2-6">Multiple experiments from independent research have shown that simpler schemes
+can reach at least equivalent performance characteristics compared to the more
+complex RFC 7540 setups seen in practice, at least for the web use case.<a href="#section-2-6" class="pilcrow">¶</a></p>
 <div id="disabling">
 <section id="section-2.1">
         <h3 id="name-disabling-rfc-7540-prioriti">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-disabling-rfc-7540-prioriti" class="section-name selfRef">Disabling RFC 7540 Priorities</a>
         </h3>
-<p id="section-2.1-1">The problems and insights set out above provided the motivation for deprecating
-RFC 7540 stream priority (see <span><a href="https://rfc-editor.org/rfc/rfc7540#section-5.3" class="relref">Section 5.3</a> of [<a href="#RFC7540" class="xref">RFC7540</a>]</span>).<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-1">The problems and insights set out above provided the motivation for an
+alternative to RFC 7540 stream priority (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3" class="relref">Section 5.3</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>).<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1-2">The SETTINGS_NO_RFC7540_PRIORITIES HTTP/2 setting is defined by this document in
 order to allow endpoints to omit or ignore HTTP/2 priority signals (see
 <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), as described below. The value of
@@ -2227,7 +2199,7 @@ makes the prioritization scheme extensible; see the discussion below.<a href="#s
       </h2>
 <p id="section-15-1"><span>[<a href="#RFC7540" class="xref">RFC7540</a>]</span> stream prioritization relies on dependencies. Considerations are
 presented to implementations, describing how limiting state or work commitments
-can avoid some types of problems. In addition, <span>[<a href="#CVE-2019-9513" class="xref">CVE-2019-9513</a>]</span> aka "Resource
+can avoid some types of problems. In addition, [CVE-2019-9513] aka "Resource
 Loop", is an example of a DoS attack that abuses stream dependencies. Extensible
 priorities does not use dependencies, which avoids these issues.<a href="#section-15-1" class="pilcrow">¶</a></p>
 <p id="section-15-2"><a href="#frame" class="xref">Section 7</a> describes considerations for server buffering of PRIORITY_UPDATE
@@ -2393,10 +2365,6 @@ defined in <a href="#parameters" class="xref">Section 4</a>; see <a href="#regis
 <dt id="CACHING">[CACHING]</dt>
         <dd>
 <span class="refAuthor">Fielding, R. T.</span>, <span class="refAuthor">Nottingham, M.</span>, and <span class="refAuthor">J. Reschke</span>, <span class="refTitle">"HTTP Caching"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-cache-19</span>, <time datetime="2021-09-12" class="refDate">12 September 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-19">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cache-19</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="CVE-2019-9513">[CVE-2019-9513]</dt>
-        <dd>
-<span class="refAuthor">Common Vulnerabilities and Exposures</span>, <span class="refTitle">"CVE-2019-9513"</span>, <time datetime="2019-03-01" class="refDate">1 March 2019</time>, <span>&lt;<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9513</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="FORWARDED">[FORWARDED]</dt>
         <dd>
