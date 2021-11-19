@@ -107,20 +107,21 @@ Table of Contents
      17.2.  Informative References
    Appendix A.  Acknowledgements
    Appendix B.  Change Log
-     B.1.  Since draft-ietf-httpbis-priority-08
-     B.2.  Since draft-ietf-httpbis-priority-07
-     B.3.  Since draft-ietf-httpbis-priority-06
-     B.4.  Since draft-ietf-httpbis-priority-05
-     B.5.  Since draft-ietf-httpbis-priority-04
-     B.6.  Since draft-ietf-httpbis-priority-03
-     B.7.  Since draft-ietf-httpbis-priority-02
-     B.8.  Since draft-ietf-httpbis-priority-01
-     B.9.  Since draft-ietf-httpbis-priority-00
-     B.10. Since draft-kazuho-httpbis-priority-04
-     B.11. Since draft-kazuho-httpbis-priority-03
-     B.12. Since draft-kazuho-httpbis-priority-02
-     B.13. Since draft-kazuho-httpbis-priority-01
-     B.14. Since draft-kazuho-httpbis-priority-00
+     B.1.  Since draft-ietf-httpbis-priority-09
+     B.2.  Since draft-ietf-httpbis-priority-08
+     B.3.  Since draft-ietf-httpbis-priority-07
+     B.4.  Since draft-ietf-httpbis-priority-06
+     B.5.  Since draft-ietf-httpbis-priority-05
+     B.6.  Since draft-ietf-httpbis-priority-04
+     B.7.  Since draft-ietf-httpbis-priority-03
+     B.8.  Since draft-ietf-httpbis-priority-02
+     B.9.  Since draft-ietf-httpbis-priority-01
+     B.10. Since draft-ietf-httpbis-priority-00
+     B.11. Since draft-kazuho-httpbis-priority-04
+     B.12. Since draft-kazuho-httpbis-priority-03
+     B.13. Since draft-kazuho-httpbis-priority-02
+     B.14. Since draft-kazuho-httpbis-priority-01
+     B.15. Since draft-kazuho-httpbis-priority-00
    Authors' Addresses
 
 1.  Introduction
@@ -1096,6 +1097,11 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
               cache-19>.
 
+   [CVE-2019-9513]
+              Common Vulnerabilities and Exposures, "CVE-2019-9513", 1
+              March 2019, <https://cve.mitre.org/cgi-bin/
+              cvename.cgi?name=CVE-2019-9513>.
+
    [FORWARDED]
               Petersson, A. and M. Nilsson, "Forwarded HTTP Extension",
               RFC 7239, DOI 10.17487/RFC7239, June 2014,
@@ -1153,11 +1159,15 @@ Appendix B.  Change Log
 
    _RFC EDITOR: please remove this section before publication_
 
-B.1.  Since draft-ietf-httpbis-priority-08
+B.1.  Since draft-ietf-httpbis-priority-09
+
+   *  Editorial changes
+
+B.2.  Since draft-ietf-httpbis-priority-08
 
    *  Changelog fixups
 
-B.2.  Since draft-ietf-httpbis-priority-07
+B.3.  Since draft-ietf-httpbis-priority-07
 
    *  Relax requirements of receiving SETTINGS_NO_RFC7540_PRIORITIES
       that changes value (#1714, #1725)
@@ -1168,7 +1178,7 @@ B.2.  Since draft-ietf-httpbis-priority-07
    *  Relax requirement when receiving a PRIORITY_UPDATE with an invalid
       structured field value (#1741, #1756)
 
-B.3.  Since draft-ietf-httpbis-priority-06
+B.4.  Since draft-ietf-httpbis-priority-06
 
    *  Focus on editorial changes
 
@@ -1177,7 +1187,7 @@ B.3.  Since draft-ietf-httpbis-priority-06
    *  Split policy for parameter IANA registry into two sections based
       on key length
 
-B.4.  Since draft-ietf-httpbis-priority-05
+B.5.  Since draft-ietf-httpbis-priority-05
 
    *  Renamed SETTINGS_DEPRECATE_RFC7540_PRIORITIES to
       SETTINGS_NO_RFC7540_PRIORITIES
@@ -1185,7 +1195,7 @@ B.4.  Since draft-ietf-httpbis-priority-05
    *  Clarify that senders of the HTTP/2 setting can use any alternative
       (#1679, #1705)
 
-B.5.  Since draft-ietf-httpbis-priority-04
+B.6.  Since draft-ietf-httpbis-priority-04
 
    *  Renamed SETTINGS_DEPRECATE_HTTP2_PRIORITIES to
       SETTINGS_DEPRECATE_RFC7540_PRIORITIES (#1601)
@@ -1194,7 +1204,7 @@ B.5.  Since draft-ietf-httpbis-priority-04
 
    *  Clarify intermediary behavior (#1562)
 
-B.6.  Since draft-ietf-httpbis-priority-03
+B.7.  Since draft-ietf-httpbis-priority-03
 
    *  Add statement about what this scheme applies to.  Clarify
       extensions can use it but must define how themselves (#1550,
@@ -1208,7 +1218,7 @@ B.6.  Since draft-ietf-httpbis-priority-03
 
    *  Suggest intermediaries might avoid strict prioritization (#1562)
 
-B.7.  Since draft-ietf-httpbis-priority-02
+B.8.  Since draft-ietf-httpbis-priority-02
 
    *  Describe considerations for server push prioritization (#1056,
       #1345)
@@ -1218,7 +1228,7 @@ B.7.  Since draft-ietf-httpbis-priority-02
 
    *  Add a Parameters registry (#1371)
 
-B.8.  Since draft-ietf-httpbis-priority-01
+B.9.  Since draft-ietf-httpbis-priority-01
 
    *  PRIORITY_UPDATE frame changes (#1096, #1079, #1167, #1262, #1267,
       #1271)
@@ -1229,14 +1239,14 @@ B.8.  Since draft-ietf-httpbis-priority-01
    *  Remove specific instructions related to intermediary fairness
       (#1022, #1264)
 
-B.9.  Since draft-ietf-httpbis-priority-00
+B.10.  Since draft-ietf-httpbis-priority-00
 
    *  Move text around (#1217, #1218)
 
    *  Editorial change to the default urgency.  The value is 3, which
       was always the intent of previous changes.
 
-B.10.  Since draft-kazuho-httpbis-priority-04
+B.11.  Since draft-kazuho-httpbis-priority-04
 
    *  Minimize semantics of Urgency levels (#1023, #1026)
 
@@ -1251,7 +1261,7 @@ B.10.  Since draft-kazuho-httpbis-priority-04
 
    *  Removed outdated Consideration (#118)
 
-B.11.  Since draft-kazuho-httpbis-priority-03
+B.12.  Since draft-kazuho-httpbis-priority-03
 
    *  Changed numbering from [-1,6] to [0,7] (#78)
 
@@ -1262,7 +1272,7 @@ B.11.  Since draft-kazuho-httpbis-priority-03
 
    *  Expand on considerations (#105, #107, #109, #110, #111, #113)
 
-B.12.  Since draft-kazuho-httpbis-priority-02
+B.13.  Since draft-kazuho-httpbis-priority-02
 
    *  Consolidation of the problem statement (#61, #73)
 
@@ -1272,11 +1282,11 @@ B.12.  Since draft-kazuho-httpbis-priority-02
 
    *  Explain fairness issue and mitigations (#56)
 
-B.13.  Since draft-kazuho-httpbis-priority-01
+B.14.  Since draft-kazuho-httpbis-priority-01
 
    *  Explain how reprioritization might be supported.
 
-B.14.  Since draft-kazuho-httpbis-priority-00
+B.15.  Since draft-kazuho-httpbis-priority-00
 
    *  Expand urgency levels from 3 to 8.
 
