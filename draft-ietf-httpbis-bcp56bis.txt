@@ -1414,9 +1414,9 @@ Table of Contents
    [HTTP-PRIORITY]
               Oku, K. and L. Pardue, "Extensible Prioritization Scheme
               for HTTP", Work in Progress, Internet-Draft, draft-ietf-
-              httpbis-priority-09, 10 November 2021,
+              httpbis-priority-10, 18 November 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              priority-09>.
+              priority-10>.
 
    [HTTP11]   Fielding, R. T., Nottingham, M., and J. Reschke,
               "HTTP/1.1", Work in Progress, Internet-Draft, draft-ietf-
@@ -1426,9 +1426,9 @@ Table of Contents
 
    [HTTP2]    Thomson, M. and C. Benfield, "Hypertext Transfer Protocol
               Version 2 (HTTP/2)", Work in Progress, Internet-Draft,
-              draft-ietf-httpbis-http2bis-05, 26 September 2021,
+              draft-ietf-httpbis-http2bis-06, 18 November 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              http2bis-05>.
+              http2bis-06>.
 
    [HTTP3]    Bishop, M., "Hypertext Transfer Protocol Version 3
               (HTTP/3)", Work in Progress, Internet-Draft, draft-ietf-

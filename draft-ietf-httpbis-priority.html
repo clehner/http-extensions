@@ -1400,7 +1400,7 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
 <p id="section-1.1-5">The term control stream is used to describe the HTTP/2 stream with identifier
 0x0, and HTTP/3 control stream; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-quic-http-34#section-6.2.1" class="relref">Section 6.2.1</a> of [<a href="#HTTP3" class="xref">HTTP3</a>]</span>.<a href="#section-1.1-5" class="pilcrow">¶</a></p>
 <p id="section-1.1-6">The term HTTP/2 priority signal is used to describe the priority information
-sent from clients to servers in HTTP/2 frames; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>.<a href="#section-1.1-6" class="pilcrow">¶</a></p>
+sent from clients to servers in HTTP/2 frames; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>.<a href="#section-1.1-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1414,7 +1414,7 @@ sent from clients to servers in HTTP/2 frames; see <span><a href="https://datatr
 where clients signal stream dependencies and weights to describe an unbalanced
 tree. It suffered from limited deployment and interoperability and was deprecated
 in a revision of HTTP/2 <span>[<a href="#HTTP2" class="xref">HTTP2</a>]</span>. HTTP/2 retains these protocol elements in
-order to maintain wire compatibility (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), which
+order to maintain wire compatibility (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), which
 means that they might still be used in the absence of alternative signaling, such
 as the scheme this document describes.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">Many RFC 7540 server implementations do not act on HTTP/2 priority
@@ -1442,12 +1442,12 @@ complex RFC 7540 setups seen in practice, at least for the web use case.<a href=
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-disabling-rfc-7540-prioriti" class="section-name selfRef">Disabling RFC 7540 Priorities</a>
         </h3>
 <p id="section-2.1-1">The problems and insights set out above provided the motivation for an
-alternative to RFC 7540 stream priority (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3" class="relref">Section 5.3</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>).<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+alternative to RFC 7540 stream priority (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.3" class="relref">Section 5.3</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>).<a href="#section-2.1-1" class="pilcrow">¶</a></p>
 <p id="section-2.1-2">The SETTINGS_NO_RFC7540_PRIORITIES HTTP/2 setting is defined by this document in
 order to allow endpoints to omit or ignore HTTP/2 priority signals (see
-<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), as described below. The value of
+<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.3.2" class="relref">Section 5.3.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>), as described below. The value of
 SETTINGS_NO_RFC7540_PRIORITIES <span class="bcp14">MUST</span> be 0 or 1. Any value other than 0 or 1 <span class="bcp14">MUST</span>
-be treated as a connection error (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.4.1" class="relref">Section 5.4.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) of type
+be treated as a connection error (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.4.1" class="relref">Section 5.4.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) of type
 PROTOCOL_ERROR. The initial value is 0.<a href="#section-2.1-2" class="pilcrow">¶</a></p>
 <p id="section-2.1-3">If endpoints use SETTINGS_NO_RFC7540_PRIORITIES they <span class="bcp14">MUST</span> send it in the first
 SETTINGS frame. Senders <span class="bcp14">MUST NOT</span> change the SETTINGS_NO_RFC7540_PRIORITIES value
@@ -1757,7 +1757,7 @@ sent, storing only the most recently received frame limits resource commitment.<
 initial priority of a response, or to reprioritize a response or push stream. It
 carries the stream ID of the response and the priority in ASCII text, using the
 same representation as the Priority header field value.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
-<p id="section-7.1-2">The Stream Identifier field (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.1.1" class="relref">Section 5.1.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) in the
+<p id="section-7.1-2">The Stream Identifier field (see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.1.1" class="relref">Section 5.1.1</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) in the
 PRIORITY_UPDATE frame header <span class="bcp14">MUST</span> be zero (0x0). Receiving a PRIORITY_UPDATE
 frame with a field of any other value <span class="bcp14">MUST</span> be treated as a connection error of
 type PROTOCOL_ERROR.<a href="#section-7.1-2" class="pilcrow">¶</a></p>
@@ -1785,7 +1785,7 @@ HTTP/2 PRIORITY_UPDATE Frame {
           </figcaption></figure>
 </div>
 <p id="section-7.1-4">The Length, Type, Unused Flag(s), Reserved, and Stream Identifier fields are
-described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-4" class="relref">Section 4</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>. The frame payload of PRIORITY_UPDATE
+described in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-4" class="relref">Section 4</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>. The frame payload of PRIORITY_UPDATE
 frame payload contains the following additional fields:<a href="#section-7.1-4" class="pilcrow">¶</a></p>
 <span class="break"></span><dl class="dlParallel" id="section-7.1-5">
           <dt id="section-7.1-5.1">
@@ -1816,7 +1816,7 @@ provide a Prioritized Stream ID that refers to a stream in the "open",
 Prioritized Stream ID refers to a stream in the "half-closed (local)" or
 "closed" state. The number of streams which have been prioritized but remain in
 the "idle" state plus the number of active streams (those in the "open" or
-either "half-closed" state; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-5.1.2" class="relref">Section 5.1.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) <span class="bcp14">MUST NOT</span> exceed
+either "half-closed" state; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-5.1.2" class="relref">Section 5.1.2</a> of [<a href="#HTTP2" class="xref">HTTP2</a>]</span>) <span class="bcp14">MUST NOT</span> exceed
 the value of the SETTINGS_MAX_CONCURRENT_STREAMS parameter. Servers that receive
 such a PRIORITY_UPDATE <span class="bcp14">MUST</span> respond with a connection error of type
 PROTOCOL_ERROR.<a href="#section-7.1-6" class="pilcrow">¶</a></p>
@@ -2332,7 +2332,7 @@ defined in <a href="#parameters" class="xref">Section 4</a>; see <a href="#regis
 <dd class="break"></dd>
 <dt id="HTTP2">[HTTP2]</dt>
         <dd>
-<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-05</span>, <time datetime="2021-09-26" class="refDate">26 September 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-06</span>, <time datetime="2021-11-18" class="refDate">18 November 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="HTTP3">[HTTP3]</dt>
         <dd>

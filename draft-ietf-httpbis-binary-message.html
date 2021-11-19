@@ -1434,9 +1434,9 @@ take just four values:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
         </h3>
 <p id="section-3.4-1">The control data for a request message includes four values that correspond to
 the values of the <code>:method</code>, <code>:scheme</code>, <code>:authority</code>, and <code>:path</code> pseudo-header
-fields described in HTTP/2 (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#H2" class="xref">H2</a>]</span>). These fields are
+fields described in HTTP/2 (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#H2" class="xref">H2</a>]</span>). These fields are
 encoded, each with a length prefix, in the order listed.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
-<p id="section-3.4-2">The rules in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.3" class="relref">Section 8.3</a> of [<a href="#H2" class="xref">H2</a>]</span> for constructing pseudo-header fields
+<p id="section-3.4-2">The rules in <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.3" class="relref">Section 8.3</a> of [<a href="#H2" class="xref">H2</a>]</span> for constructing pseudo-header fields
 apply to the construction of these values. However, where the <code>:authority</code>
 pseudo-header field might be omitted in HTTP/2, a zero-length value is encoded
 instead.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
@@ -1469,7 +1469,7 @@ Request Control Data {
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-response-control-data" class="section-name selfRef">Response Control Data</a>
         </h3>
 <p id="section-3.5-1">The control data for a request message includes a single field that corresponds
-to the <code>:status</code> pseudo-header field in HTTP/2; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.3.2" class="relref">Section 8.3.2</a> of [<a href="#H2" class="xref">H2</a>]</span>. This field is encoded as a single variable length integer, not a decimal
+to the <code>:status</code> pseudo-header field in HTTP/2; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.3.2" class="relref">Section 8.3.2</a> of [<a href="#H2" class="xref">H2</a>]</span>. This field is encoded as a single variable length integer, not a decimal
 string.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 <p id="section-3.5-2">The format of final response control data is shown in
 <a href="#format-response-control-data" class="xref">Figure 4</a>.<a href="#section-3.5-2" class="pilcrow">¶</a></p>
@@ -1549,14 +1549,14 @@ Field Line {
 the message to be invalid; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-5.1" class="relref">Section 5.1</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span> for a definition of
 what is valid and <a href="#invalid" class="xref">Section 4</a> for handling of invalid messages.<a href="#section-3.6-4" class="pilcrow">¶</a></p>
 <p id="section-3.6-5">Field names and values MUST be constructed and validated according to the rules
-of <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.2.1" class="relref">Section 8.2.1</a> of [<a href="#H2" class="xref">H2</a>]</span>.  A recipient MUST treat a message that contains
-field values that would cause an HTTP/2 message to be malformed (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.1.1" class="relref">Section 8.1.1</a> of [<a href="#H2" class="xref">H2</a>]</span>) as invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.6-5" class="pilcrow">¶</a></p>
+of <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.2.1" class="relref">Section 8.2.1</a> of [<a href="#H2" class="xref">H2</a>]</span>.  A recipient MUST treat a message that contains
+field values that would cause an HTTP/2 message to be malformed (<span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.1.1" class="relref">Section 8.1.1</a> of [<a href="#H2" class="xref">H2</a>]</span>) as invalid; see <a href="#invalid" class="xref">Section 4</a>.<a href="#section-3.6-5" class="pilcrow">¶</a></p>
 <p id="section-3.6-6">The same field name can be repeated in multiple field lines; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-semantics-19#section-5.2" class="relref">Section 5.2</a> of [<a href="#HTTP" class="xref">HTTP</a>]</span> for the semantics of repeated field names and rules for combining
 values.<a href="#section-3.6-6" class="pilcrow">¶</a></p>
 <p id="section-3.6-7">Like HTTP/2, this format has an exception for the combination of multiple
 instances of the <code>Cookie</code> field. Instances of fields with the ASCII-encoded
 value of <code>cookie</code> are combined using a semicolon octet (0x3b) rather than a
-comma; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.2.3" class="relref">Section 8.2.3</a> of [<a href="#H2" class="xref">H2</a>]</span>.<a href="#section-3.6-7" class="pilcrow">¶</a></p>
+comma; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.2.3" class="relref">Section 8.2.3</a> of [<a href="#H2" class="xref">H2</a>]</span>.<a href="#section-3.6-7" class="pilcrow">¶</a></p>
 <p id="section-3.6-8">This format provides fixed locations for content that would be carried in HTTP/2
 pseudo-fields. Therefore, there is no need to include field lines containing a
 name of <code>:method</code>, <code>:scheme</code>, <code>:authority</code>, <code>:path</code>, or <code>:status</code>.  Fields that
@@ -1652,7 +1652,7 @@ of the content is not modified.<a href="#section-5.1-4" class="pilcrow">¶</a></
 </div>
 <p id="section-5.1-6">This example shows that the Host header field is not replicated in the
 :authority field, as is required for ensuring that the request is reproduced
-accurately; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#H2" class="xref">H2</a>]</span>.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
+accurately; see <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#H2" class="xref">H2</a>]</span>.<a href="#section-5.1-6" class="pilcrow">¶</a></p>
 <p id="section-5.1-7">The same message can be truncated with no effect on interpretation. In this
 case, the last two bytes - corresponding to content and a trailer section - can
 each be removed without altering the semantics of the message.<a href="#section-5.1-7" class="pilcrow">¶</a></p>
@@ -1967,7 +1967,7 @@ information in <a href="#media-type" class="xref">Section 6</a> for the media ty
 <dl class="references">
 <dt id="H2">[H2]</dt>
         <dd>
-<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-05</span>, <time datetime="2021-09-26" class="refDate">26 September 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-06</span>, <time datetime="2021-11-18" class="refDate">18 November 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="HTTP">[HTTP]</dt>
         <dd>

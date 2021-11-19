@@ -632,9 +632,9 @@ Table of Contents
 
    [H2]       Thomson, M. and C. Benfield, "Hypertext Transfer Protocol
               Version 2 (HTTP/2)", Work in Progress, Internet-Draft,
-              draft-ietf-httpbis-http2bis-05, 26 September 2021,
+              draft-ietf-httpbis-http2bis-06, 18 November 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-
-              http2bis-05>.
+              http2bis-06>.
 
    [HTTP]     Fielding, R. T., Nottingham, M., and J. Reschke, "HTTP
               Semantics", Work in Progress, Internet-Draft, draft-ietf-

@@ -1914,7 +1914,7 @@ Referrer-Policy: no-referrer
         <h3 id="name-using-server-push">
 <a href="#section-4.15" class="section-number selfRef">4.15. </a><a href="#name-using-server-push" class="section-name selfRef">Using Server Push</a>
         </h3>
-<p id="section-4.15-1">HTTP/2 added the ability for servers to "push" request/response pairs to clients in <span>[<a href="#HTTP2" class="xref">HTTP2</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.4" class="relref">Section 8.4</a></span>. While server push seems like a natural fit for many common application semantics (e.g., "fanout" and publish/subscribe), a few caveats should be noted:<a href="#section-4.15-1" class="pilcrow">¶</a></p>
+<p id="section-4.15-1">HTTP/2 added the ability for servers to "push" request/response pairs to clients in <span>[<a href="#HTTP2" class="xref">HTTP2</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.4" class="relref">Section 8.4</a></span>. While server push seems like a natural fit for many common application semantics (e.g., "fanout" and publish/subscribe), a few caveats should be noted:<a href="#section-4.15-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.15-2.1">Server push is hop-by-hop; that is, it is not automatically forwarded by intermediaries. As a result, it might not work easily (or at all) with proxies, reverse proxies, and Content Delivery Networks.<a href="#section-4.15-2.1" class="pilcrow">¶</a>
 </li>
@@ -1930,7 +1930,7 @@ Referrer-Policy: no-referrer
 </li>
         </ul>
 <p id="section-4.15-3">Applications wishing to optimise cases where the client can perform work related to requests before the full response is available (e.g., fetching links for things likely to be contained within) might benefit from using the 103 (Early Hints) status code; see <span>[<a href="#RFC8297" class="xref">RFC8297</a>]</span>.<a href="#section-4.15-3" class="pilcrow">¶</a></p>
-<p id="section-4.15-4">Applications using server push directly need to enforce the requirements regarding authority in <span>[<a href="#HTTP2" class="xref">HTTP2</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05#section-8.4" class="relref">Section 8.4</a></span>, to avoid cross-origin push attacks.<a href="#section-4.15-4" class="pilcrow">¶</a></p>
+<p id="section-4.15-4">Applications using server push directly need to enforce the requirements regarding authority in <span>[<a href="#HTTP2" class="xref">HTTP2</a>], <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06#section-8.4" class="relref">Section 8.4</a></span>, to avoid cross-origin push attacks.<a href="#section-4.15-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="versioning">
@@ -2067,7 +2067,7 @@ Referrer-Policy: no-referrer
 <dd class="break"></dd>
 <dt id="HTTP-PRIORITY">[HTTP-PRIORITY]</dt>
         <dd>
-<span class="refAuthor">Oku, K.</span> and <span class="refAuthor">L. Pardue</span>, <span class="refTitle">"Extensible Prioritization Scheme for HTTP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-priority-09</span>, <time datetime="2021-11-10" class="refDate">10 November 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-priority-09">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-priority-09</a>&gt;</span>. </dd>
+<span class="refAuthor">Oku, K.</span> and <span class="refAuthor">L. Pardue</span>, <span class="refTitle">"Extensible Prioritization Scheme for HTTP"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-priority-10</span>, <time datetime="2021-11-18" class="refDate">18 November 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-priority-10">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-priority-10</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="HTTP11">[HTTP11]</dt>
         <dd>
@@ -2075,7 +2075,7 @@ Referrer-Policy: no-referrer
 <dd class="break"></dd>
 <dt id="HTTP2">[HTTP2]</dt>
         <dd>
-<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-05</span>, <time datetime="2021-09-26" class="refDate">26 September 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-05</a>&gt;</span>. </dd>
+<span class="refAuthor">Thomson, M.</span> and <span class="refAuthor">C. Benfield</span>, <span class="refTitle">"Hypertext Transfer Protocol Version 2 (HTTP/2)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-httpbis-http2bis-06</span>, <time datetime="2021-11-18" class="refDate">18 November 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-http2bis-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="HTTP3">[HTTP3]</dt>
         <dd>
