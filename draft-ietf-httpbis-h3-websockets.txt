@@ -4,7 +4,7 @@
 
 HTTP                                                         R. Hamilton
 Internet-Draft                                                    Google
-Intended status: Informational                          22 November 2021
+Intended status: Standards Track                        22 November 2021
 Expires: 26 May 2022
 
 
