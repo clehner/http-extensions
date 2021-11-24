@@ -5,8 +5,8 @@
 HTTP                                                          M. Thomson
 Internet-Draft                                                   Mozilla
 Intended status: Standards Track                               C.A. Wood
-Expires: 26 May 2022                                          Cloudflare
-                                                        22 November 2021
+Expires: 28 May 2022                                          Cloudflare
+                                                        24 November 2021
 
 
                  Binary Representation of HTTP Messages
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 May 2022.
+   This Internet-Draft will expire on 28 May 2022.
 
 Copyright Notice
 
