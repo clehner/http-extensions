@@ -6,11 +6,11 @@ HTTP                                                        L. Chen, Ed.
 Internet-Draft                                                Google LLC
 Obsoletes: 6265 (if approved)                         S. Englehardt, Ed.
 Intended status: Standards Track                                 Mozilla
-Expires: 28 May 2022                                        M. West, Ed.
+Expires: 30 May 2022                                        M. West, Ed.
                                                               Google LLC
                                                         J. Wilander, Ed.
                                                               Apple, Inc
-                                                        24 November 2021
+                                                        26 November 2021
 
 
                 Cookies: HTTP State Management Mechanism
@@ -26,18 +26,17 @@ Abstract
    and privacy, the Cookie and Set-Cookie header fields are widely used
    on the Internet.  This document obsoletes RFC 6265.
 
-Note to Readers
+Discussion Venues
 
-   Discussion of this draft takes place on the HTTP working group
-   mailing list (ietf-http-wg@w3.org), which is archived at
-   https://lists.w3.org/Archives/Public/ietf-http-wg/
-   (https://lists.w3.org/Archives/Public/ietf-http-wg/).
+   This note is to be removed before publishing as an RFC.
 
-   Working Group information can be found at http://httpwg.github.io/
-   (http://httpwg.github.io/); source code and issues list for this
-   draft can be found at https://github.com/httpwg/http-extensions/
-   labels/6265bis (https://github.com/httpwg/http-extensions/
-   labels/6265bis).
+   Discussion of this document takes place on the HTTP Working Group
+   mailing list (mailto:ietf-http-wg@w3.org), which is archived at
+   https://lists.w3.org/Archives/Public/ietf-http-wg/.  Working Group
+   information can be found at https://httpwg.org/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/httpwg/http-extensions/labels/6265bis.
 
 Status of This Memo
 
@@ -54,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 May 2022.
+   This Internet-Draft will expire on 30 May 2022.
 
 Copyright Notice
 

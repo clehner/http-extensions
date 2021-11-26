@@ -6,7 +6,7 @@ HTTP                                                            R. Polli
 Internet-Draft                         Team Digitale, Italian Government
 Obsoletes: 3230 (if approved)                                  L. Pardue
 Intended status: Standards Track                              Cloudflare
-Expires: 28 May 2022                                    24 November 2021
+Expires: 30 May 2022                                    26 November 2021
 
 
                              Digest Fields
@@ -23,18 +23,17 @@ Abstract
 
    This document obsoletes RFC 3230.
 
-Note to Readers
+Discussion Venues
 
-   _RFC EDITOR: please remove this section before publication_
+   This note is to be removed before publishing as an RFC.
 
-   Discussion of this draft takes place on the HTTP working group
-   mailing list (ietf-http-wg@w3.org), which is archived at
-   https://lists.w3.org/Archives/Public/ietf-http-wg/
-   (https://lists.w3.org/Archives/Public/ietf-http-wg/).
+   Discussion of this document takes place on the HTTP Working Group
+   mailing list (mailto:ietf-http-wg@w3.org), which is archived at
+   https://lists.w3.org/Archives/Public/ietf-http-wg/.  Working Group
+   information can be found at https://httpwg.org/.
 
-   The source code and issues list for this draft can be found at
-   https://github.com/httpwg/http-extensions (https://github.com/httpwg/
-   http-extensions).
+   Source for this draft and an issue tracker can be found at
+   https://github.com/httpwg/http-extensions/labels/digest-headers.
 
 Status of This Memo
 
@@ -51,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 May 2022.
+   This Internet-Draft will expire on 30 May 2022.
 
 Copyright Notice
 

@@ -5,10 +5,10 @@
 HTTP                                                            S. Ludin
 Internet-Draft                                                    Akamai
 Intended status: Standards Track                           M. Nottingham
-Expires: 28 May 2022                                              Fastly
+Expires: 30 May 2022                                              Fastly
                                                                    Y. Wu
                                                               Cloudflare
-                                                        24 November 2021
+                                                        26 November 2021
 
 
                       Targeted HTTP Cache Control
@@ -21,23 +21,17 @@ Abstract
    or classes of caches.  It also defines one such header field,
    targeted at Content Delivery Network (CDN) caches.
 
-Note to Readers
+Discussion Venues
 
-   _RFC EDITOR: please remove this section before publication_
+   This note is to be removed before publishing as an RFC.
 
-   The issues list for this draft can be found at
-   https://github.com/httpwg/http-extensions/labels/targeted-cc
-   (https://github.com/httpwg/http-extensions/labels/targeted-cc).
+   Discussion of this document takes place on the HTTP Working Group
+   mailing list (mailto:ietf-http-wg@w3.org), which is archived at
+   https://lists.w3.org/Archives/Public/ietf-http-wg/.  Working Group
+   information can be found at https://httpwg.org/.
 
-   The most recent (often, unpublished) draft is at https://httpwg.org/
-   http-extensions/draft-ietf-httpbis-targeted-cache-control.html
-   (https://httpwg.org/http-extensions/draft-ietf-httpbis-targeted-
-   cache-control.html).
-
-   See also the draft's current status in the IETF datatracker, at
-   https://datatracker.ietf.org/doc/draft-ietf-httpbis-targeted-cache-
-   control/ (https://datatracker.ietf.org/doc/draft-ietf-httpbis-
-   targeted-cache-control/).
+   Source for this draft and an issue tracker can be found at
+   https://github.com/httpwg/http-extensions/labels/targeted-cc.
 
 Status of This Memo
 
@@ -54,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 May 2022.
+   This Internet-Draft will expire on 30 May 2022.
 
 Copyright Notice
 
